@@ -89,9 +89,8 @@ public class String1
     public String extraEnd(String str) {
         int length =  str.length();
         int start = length - 2;
-        String newWord = str.substring(start, length);
+        String newWord = str.substring(start);
         String answer = newWord + newWord+ newWord;
-        
         return answer;
     }
 
@@ -127,7 +126,6 @@ public class String1
      * The string length will be at least 2.
      * withoutEnd("Hello") â†’ "ell"
      * withoutEnd("java") â†’ "av"
-     * withoutEnd("coding") â†’ "odin"
      */
     public String withoutEnd(String str) {
         int finalNumber = str.length()-1;

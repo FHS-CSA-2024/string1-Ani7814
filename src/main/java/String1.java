@@ -235,7 +235,14 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+        int length = a.length();
+        if(a.substring(length-1).equals(b.substring(0,1))){
+            return a + b.substring(1);
+        }
+        else{
+            String answer = a+b;
+            return answer;
+        }
     }
 
     /*
@@ -249,7 +256,20 @@ public class String1
      *minCat("java", "Hello") â†’ "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+        int lengthA = a.length();
+        int lengthB = b.length();
+        if(lengthA > lengthB){
+            String newA = a.substring(lengthA-lengthB);
+            return newA+b;
+        }
+        else if(lengthA<lengthB){
+            String newB = b.substring(lengthB-lengthA);
+            return a+newB;
+        }
+        else{
+            return a+b;
+        }
+        
     }
 
     /*
@@ -260,7 +280,25 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        String firstLetter = str.substring(0,1);
+        int length = str.length();
+        String lastLetter = str.substring(length-1);
+        if(firstLetter.equals("x")){
+            if(lastLetter.equals("x")){
+                return str.substring(1, length-1);
+            }
+            else{
+                return str.substring(1);
+            }
+        }
+        else{
+            if(lastLetter.equals("x")){
+                return str.substring(length-2);
+            }
+            else{
+                return str;
+            }
+        }   
     }
 
     /*
@@ -273,7 +311,49 @@ public class String1
      * deFront("away") â†’ "aay"
      */
     public String deFront(String str) {    
-        return unimplemented;
+        String firstLetter = str.substring(0,1);
+        String secondLetter = str.substring(1,2);
+        if(firstLetter.equals("a")){
+            if(secondLetter.equals("b")){
+                return str.substring(2);
+            }
+            else{
+                return str.substring(1);
+            }
+        }
+        else {
+            if(secondLetter.equals("b")){
+                return str.substring(0,1)+str.substring(2);
+            }
+            else{
+                return str.substring(2);
+            }
+        }
     }
 
 }
+
+/*
+Hello Bob!
+HiByeByeHi
+<i>Yay</i>
+<<Yay>>
+lololo
+He
+ell
+hiHellohi
+and
+HeHeHe
+lloHe
+true
+abcat
+loHi
+Hi
+llo
+*/
+
+
+
+
+
+

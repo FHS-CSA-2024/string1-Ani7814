@@ -183,9 +183,14 @@ public class String1
      * extraFront("H") â†’ "HHH"
      */
     public String extraFront(String str) {
+        if(str.length()<2){
+            return str+str+str;
+        }
+        else{
         String word = str.substring(0,2);
         String answer = word+word+word;
         return answer;
+    }
     }
 
     /*
@@ -234,8 +239,10 @@ public class String1
      */
     public String conCat(String a, String b) {
         int length = a.length();
-        if(a.substring(length-1).equals(b.substring(0,1))){
-            return a + b.substring(1);
+        String lastLetter = a.substring(length-1);
+        String firstLetter = b.substring(0,2);
+        if(lastLetter.equals(firstLetter)){
+            return a.substring(0,length-1) + b;
         }
         else{
             String answer = a+b;
@@ -291,7 +298,7 @@ public class String1
         }
         else{
             if(lastLetter.equals("x")){
-                return str.substring(length-2);
+                return str.substring(0, length-1);
             }
             else{
                 return str;
@@ -313,15 +320,15 @@ public class String1
         String secondLetter = str.substring(1,2);
         if(firstLetter.equals("a")){
             if(secondLetter.equals("b")){
-                return str.substring(2);
+                return str;
             }
             else{
-                return str.substring(1);
+                return str.substring(0,1)+str.substring(2);
             }
         }
         else {
             if(secondLetter.equals("b")){
-                return str.substring(0,1)+str.substring(2);
+                return str;
             }
             else{
                 return str.substring(2);
@@ -349,9 +356,3 @@ loHi
 Hi
 llo
 */
-
-
-
-
-
-

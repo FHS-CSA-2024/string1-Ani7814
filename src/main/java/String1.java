@@ -238,15 +238,24 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
-        int length = a.length();
-        String lastLetter = a.substring(length-1);
-        String firstLetter = b.substring(0,2);
-        if(lastLetter.equals(firstLetter)){
-            return a.substring(0,length-1) + b;
+        
+        if(b.length()==0){
+            return a;
+        }
+        else if(a.length()==0){
+            return b;
         }
         else{
-            String answer = a+b;
-            return answer;
+            int length = a.length();
+            String lastLetter = String.valueOf(a.charAt(length-1));//a.substring(length-1);
+            String firstLetter = String.valueOf(b.charAt(0));;
+            if(lastLetter.equals(firstLetter)){
+                return a.substring(0,length-1) + b;
+            }
+            else{
+                String answer = a+b;
+                return answer;
+            }
         }
     }
 
